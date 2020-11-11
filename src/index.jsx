@@ -6,9 +6,10 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 import { Provider } from 'react-redux'
 import { ToastContainer } from 'react-toastify'
+
 import * as serviceWorker from './serviceWorker'
 import App from './App'
-import store from '@services/store'
+import store from './services/store'
 import { envContext, envContextValue } from './contexts'
 
 import 'react-toastify/dist/ReactToastify.css'

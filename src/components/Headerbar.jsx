@@ -1,7 +1,8 @@
 /* eslint-disable template-curly-spacing */
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { selectConfig } from '@slices/config'
+
+import { selectConfig } from '../slices/config'
 
 const Headerbar = () => {
   const config = useSelector(selectConfig)

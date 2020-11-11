@@ -3,9 +3,8 @@ import clsx from 'clsx'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 
-import { selectApp } from '@slices/app'
-
-import { ReactComponent as Portfolio } from '@assets/portfolio.svg'
+import { selectApp } from '../slices/app'
+import { ReactComponent as Portfolio } from '../assets/portfolio.svg'
 
 const Sidebar = () => {
   const app = useSelector(selectApp)
@@ -15,7 +14,9 @@ const Sidebar = () => {
     <div className={clsx('Sidebar rounded-md', !app.envLoaded ? 'bg-theme-neutral-200' : 'bg-white')}>
       {app.envLoaded && (
         <>
-          <Link to="/wallet"><Portfolio className={clsx(baseClass, 'pt-4 sm:pt-8 pb-2 sm:pb-4')} /></Link>
+          <Link to="/wallet">
+            <Portfolio className={clsx(baseClass, 'pt-4 sm:pt-8 pb-2 sm:pb-4')} />
+          </Link>
         </>
       )}
     </div>

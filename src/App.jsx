@@ -5,13 +5,13 @@ import Spinner from 'react-spinner-material'
 import { Switch, Route } from 'react-router-dom'
 import clsx from 'clsx'
 
-import { Sidebar, Headerbar } from '@components'
-import { envContext } from '@contexts'
-import { setState, selectApp } from '@slices/app'
-import { selectConfig } from '@slices/config'
-import { Transactions, Wallet } from '@pages'
+import { Sidebar, Headerbar } from './components'
+import { envContext } from './contexts'
+import { setState, selectApp } from './slices/app'
+import { selectConfig } from './slices/config'
+import { Transactions, Wallet } from './pages'
 
-import { ReactComponent as ARKLogo } from '@assets/logo.svg'
+import { ReactComponent as ARKLogo } from './assets/ark.svg'
 
 const App = () => {
   const app = useSelector(selectApp)

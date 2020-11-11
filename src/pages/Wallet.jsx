@@ -5,10 +5,10 @@ import Spinner from 'react-spinner-material'
 import { TextField, Button } from '@material-ui/core'
 import { toast } from 'react-toastify'
 
-import { getWallet } from '@services/api'
-import { selectApp } from '@slices/app'
-import { envContext } from '@contexts'
-import Wallets from '@components/Wallets'
+import { getWallet } from '../services/api'
+import { selectApp } from '../slices/app'
+import { envContext } from '../contexts'
+import Wallets from '../components/Wallets'
 
 const Wallet = () => {
   const app = useSelector(selectApp)

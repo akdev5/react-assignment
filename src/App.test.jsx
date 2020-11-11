@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import { Provider } from 'react-redux'
-import { store } from '@services'
-import { envContext } from '@contexts'
+
+import { store } from './services'
+import { envContext } from './contexts'
 import App from './App'
 
 test('Check it boots the SDK', () => {

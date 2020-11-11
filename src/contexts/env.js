@@ -4,7 +4,8 @@ import React from 'react'
 import { ARK } from '@arkecosystem/platform-sdk-ark';
 import { Environment } from '@arkecosystem/platform-sdk-profiles'
 import { Request } from '@arkecosystem/platform-sdk-http-axios'
-import store from '@services/store'
+
+import store from '../services/store'
 
 const { config } = store.getState()
 

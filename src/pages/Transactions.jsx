@@ -3,10 +3,9 @@ import { Button } from '@material-ui/core'
 import { usePagination } from 'react-use-pagination';
 import { useParams } from 'react-router-dom'
 
-import { api } from '@services'
-
-import { ReactComponent as Back } from '@assets/back.svg'
-import { ReactComponent as Forward } from '@assets/forward.svg'
+import { api } from '../services'
+import { ReactComponent as Back } from '../assets/back.svg'
+import { ReactComponent as Forward } from '../assets/forward.svg'
 
 const Transactions = () => {
   const { address } = useParams()
@@ -31,17 +30,17 @@ const Transactions = () => {
   } = usePagination({ totalItems: state.transactions.meta.totalCount, initialPageSize: 5 })
 
   useEffect(() => {
-    api.getWalletTransactions(address, currentPage + 1, pageSize).then(json => {
+    api.getWalletTransactions(address, currentPage + 1, pageSize).then((json) => {
       setState((currentState) => ({
         ...currentState,
         error: false,
-        transactions: json
+        transactions: json,
       }))
     }).catch((error) => {
-      error.json().then(json => setState({
+      error.json().then((json) => setState({
         ...initialState,
         error: true,
-        message: json.message
+        message: json.message,
       }))
     })
   }, [currentPage])
@@ -49,7 +48,7 @@ const Transactions = () => {
   if (state.error) {
     return (
       <p className="text-theme-danger-500">
-        Sorry, can't load data {state.message}.
+        {`Sorry, cannot load data. ${state.message}}`}
       </p>
     )
   }
@@ -63,7 +62,7 @@ const Transactions = () => {
           <p className="w-1/2">ID</p>
           <p className="w-1/2">Confirmations</p>
         </div>
-        {state.transactions.data.map(tx => (
+        {state.transactions.data.map((tx) => (
           <div key={tx.id} className="flex justify-around">
             <p className="w-1/2">
               ...
@@ -82,7 +81,7 @@ const Transactions = () => {
             <Back className="h-4 sm:h-6" />
           </Button>
           <p>
-            Page {currentPage + 1} {' '} of {totalPages}
+            {`Page ${currentPage + 1} ${' '} of ${totalPages}`}
           </p>
           <Button
             onClick={setNextPage}
