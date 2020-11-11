@@ -1,0 +1,24 @@
+{
+  "extends": ["react-app", "airbnb"],
+  "rules": {
+    "semi": "off"
+  },
+  "settings": {
+    "react": {
+      "version": "17.0"
+    },
+    "import/resolver": {
+      "babel-module": {
+        "root": ["."],
+        "alias": {
+          "@assets": "./assets",
+          "@slices": "./slices",
+          "@services": "./services",
+          "@contexts": "./contexts",
+          "@components": "./components",
+          "@pages": "./pages",
+        }
+      }
+    }
+  },
+}
