@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import clsx from 'clsx'
 import { Link } from 'react-router-dom'
 import Accordion from '@material-ui/core/Accordion'
 import AccordionDetails from '@material-ui/core/AccordionDetails'
 import AccordionSummary from '@material-ui/core/AccordionSummary'
-import { ExpandMore, Launch, HowToVote, ImportExport } from '@material-ui/icons'
+import {
+  ExpandMore,
+  Launch,
+  ImportExport,
+} from '@material-ui/icons'
 
-// eslint-disable-next-line react/prop-types
 const Wallets = ({ wallets }) => {
   const [expanded, setExpanded] = useState(false)
 
@@ -31,9 +35,12 @@ const Wallets = ({ wallets }) => {
           >
             <AccordionSummary
               expandIcon={<ExpandMore />}
-              aria-controls={`${id}-content`} id={`${id}-header`}
+              aria-controls={`${id}-content`}
+              id={`${id}-header`}
             >
-              <p className="break-all text-sm sm:text-md">{id}</p>
+              <p className="break-all text-sm sm:text-md">
+                {id}
+              </p>
             </AccordionSummary>
             <AccordionDetails>
               <div
@@ -58,5 +65,9 @@ const Wallets = ({ wallets }) => {
     </div>
   )
 }
+
+Wallets.propTypes = {
+  wallets: PropTypes.shape({}).isRequired,
+};
 
 export default Wallets

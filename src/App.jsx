@@ -1,8 +1,12 @@
 import React, { useEffect, useContext } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Link,
+  Switch,
+  Route,
+} from 'react-router-dom'
 import Spinner from 'react-spinner-material'
-import { Switch, Route } from 'react-router-dom'
 import clsx from 'clsx'
 
 import { Sidebar, Headerbar } from './components'
@@ -59,7 +63,7 @@ const App = () => {
                   <Route exact path="/">
                     <p className="w-full text-lg font-bold text-center">Welcome</p>
                     <p className="text-sm">
-                      Profile ID: {env.getProfile().id()}
+                      {`Profile ID: ${env.getProfile().id()}`}
                     </p>
                   </Route>
                   <Route path="/wallet">
